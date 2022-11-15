@@ -1,0 +1,41 @@
+<app-header></app-header>
+
+<div class="container-fluid mx-2">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row animated fadeIn">
+        <div class="card-columns">
+          <div
+            class="card card1 my-4 mx-2"
+            *ngFor="let product of products; let i = index"
+            style="width: 18rem"
+          >
+            <img [src]="product.image" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title">{{ product.name }}</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+              
+              <li class="list-group-item">Talla {{ product.size }}</li>
+              <li class="list-group-item">{{ product.gender }}</li>
+              <li class="list-group-item">$ {{ product.price }}</li>
+            </ul>
+            <div class="card-body">
+              <button
+                type="button"
+                class="btn btn-outline-primary"
+                name="btn"
+                (click)="agregarCarrit(product)"
+              >
+                Ver Remera...
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<app-footer></app-footer>

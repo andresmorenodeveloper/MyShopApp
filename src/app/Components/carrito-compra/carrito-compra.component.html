@@ -1,0 +1,46 @@
+<app-header></app-header>
+
+<div class="row animated fadeIn">
+  <div class="card-columns">
+    <div
+      class="card"
+      *ngFor="let item of products; let i = index" 
+      style="width: 18rem"
+    >
+      <img [src]="item.image" class="card-img-top" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{ item.name }}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ item.size }}</li>
+        <li class="list-group-item">{{ item.gender }}</li>
+        <li class="list-group-item">$ {{ 0 }}</li>
+      </ul>
+      <div class="card-body">
+        <button
+          type="button"
+          class="btn btn-outline-danger"
+          name="btn"
+          (click)="borrarDeLista(i)"
+        >
+          Borrar del carrito
+        </button>
+
+        
+          <button *ngIf="mostrarBtn"
+            
+            width="400px"
+            type="button"
+            class="btn btn-outline-info btn.block"
+          >
+            Confirmar compra
+          </button>
+       
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
